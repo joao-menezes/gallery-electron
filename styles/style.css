@@ -1,0 +1,321 @@
+:root {
+    --black: rgb(0, 0, 0);
+    --primary: #26d8cf;
+    --primary-dark: #0cddc1;
+    --purple: #4040df;
+    --white: #f0f0f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    box-sizing: border-box;
+}
+
+*,
+button,
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
+#bg {
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    height: 80vh;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: auto;
+    width: 80vh;
+}
+
+.zoom {
+    overflow: hidden;
+}
+
+.zoom img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.zoom:hover img {
+    -moz-transform: scale(1.06);
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+    border-radius: 15px;
+}
+
+button {
+    width: 100%;
+    color: var(--white);
+    border: none;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    height: 70px;
+    outline: none;
+    position: relative;
+    transition: .25s;
+    margin-top: 5px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.image {
+    height: 80vh;
+    position: relative;
+    margin: 15px;
+    box-shadow: 0 0 10px 0 var(--black);
+}
+
+.fullscreen{
+    background-color: #48484882;
+    background-image: url(../imgs/fullscreen.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-position: 10px;
+    bottom: 130px;
+    left: 8px;
+}
+
+.image:hover::after,
+.image.fav::after {
+    content: '\2605';
+    color: var(--primary);
+    position: absolute;
+    top: 0;
+    left: 8px;
+    font-size: 3.2rem;
+}
+
+.image.fav:hover::after {
+    content: '\2606';
+}
+
+#showGalleryBtn {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px;
+    width: auto;
+    cursor: pointer;
+}
+
+.gallery {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+}
+
+.gallery img {
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    transition: .25s;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--white);
+    margin: 20px;
+    padding: 10px ;
+    transition: .25s;
+    background-color:rgb(255,255,255, .26);
+    border-radius: 30px;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.delete {
+    width: 50px;
+    height: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #ff4f2f;
+    background-image: url('../imgs/garbage.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+}
+
+.delete:hover {
+    background-color: #b83e29;
+}
+
+.setBg {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: var(--primary);
+    background-image: url('../imgs/mountains-couple-svgrepo-com.svg');
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.setBg:hover{
+    background-color: #20b8b0;
+}
+
+.download{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: var(--purple);
+    background-image: url('../imgs/icons8-download-35.png');
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.download:hover{
+    background-color: #3030b3;
+}
+
+/*.delete:hover,*/
+/*.setBg:hover,*/
+/*.download:hover{*/
+/*    width: 50%;*/
+/*}*/
+
+.closePreview,
+.delete,
+.setBg,
+.download{
+    margin-bottom: 10px;
+}
+
+#actionButtons{
+    position: fixed;
+    justify-content: space-evenly;
+    right: 10px;
+    bottom: 20px;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    display: none;
+    z-index: 8;
+}
+
+#topBtn {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 30px;
+    transform: rotate(-90deg);
+    margin-left: 15px;
+}
+
+#reverseGallery:hover,
+#topBtn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 0 10px 0px var(--white);
+}
+
+#reverseGallery{
+    background-image: url("../imgs/sort-alt.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 50px;
+}
+
+.counter{
+    padding: 5px;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 30px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.preview{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    padding: 15px;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgb(82 82 82 / 90%);
+}
+
+.preview img{
+    width: auto;
+    height: 95%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.closePreview{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    background-image: url('../imgs/icons8-delete-35.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.action-button-preview{
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <p id="status" style="color: white;font-size: 20rem;"></p>
+    <div class="preview"></div>
+    <div id="bg"></div>
+    <div class="container">
+        <div class="image"></div>
+        <button id="rdn">random image</button>
+        <button class="fullscreen"></button>
+    </div>
+    <button id="showGalleryBtn">show gallery</button>
+    <div class="gallery"></div>
+
+    <div id="actionButtons">
+        <button onclick="topFunction()" id="topBtn" title="To top">ᐅ</button>
+        <button onclick="reverseGallery()" id="reverseGallery" title="Reverse Order"></button>
+    </div>
+
+    <script src="./scripts/top.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/renderer.js"></script>
+</body>
+</html>
